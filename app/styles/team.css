@@ -1,0 +1,364 @@
+/* =========================================================
+   IMAGENIE TEAM SECTION
+========================================================= */
+
+.team-section {
+  width: 100%;
+  background: #ffffff;
+  color: #111111;
+  overflow: hidden;
+  padding: 100px 0;
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.team-heading {
+  max-width: 1000px;
+  margin-bottom: 55px;
+}
+
+.team-subtitle {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  color: #ff6a00;
+}
+
+.team-heading h2 {
+  margin: 0 0 18px;
+  font-size: clamp(38px, 4vw, 64px);
+  line-height: 1.05;
+  font-weight: 500;
+  color: #111111;
+}
+
+.team-heading p {
+  max-width: 900px;
+  margin: 0;
+  font-size: 20px;
+  line-height: 1.55;
+  color: #444444;
+}
+
+
+/* =========================================================
+   SLIDER WRAPPER
+========================================================= */
+
+.team-slider-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   SLIDER
+========================================================= */
+
+.team-slider {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+
+  width: max-content;
+
+  animation: teamScroll 35s linear infinite;
+}
+
+
+/* Stop scrolling when hovering */
+
+.team-slider-wrapper:hover .team-slider {
+  animation-play-state: paused;
+}
+
+
+/* =========================================================
+   TEAM CARD
+========================================================= */
+
+.team-card {
+  flex: 0 0 320px;
+  width: 320px;
+  min-width: 320px;
+}
+
+
+/* =========================================================
+   TEAM IMAGE
+========================================================= */
+
+.team-image {
+  position: relative;
+
+  width: 100%;
+  height: 400px;
+
+  overflow: hidden;
+
+  background: #eeeeee;
+}
+
+
+/* Next Image fill */
+
+.team-img {
+  object-fit: cover;
+
+  transition:
+    transform 0.6s ease,
+    filter 0.6s ease;
+}
+
+
+/* Image zoom */
+
+.team-card:hover .team-img {
+  transform: scale(1.07);
+}
+
+
+/* =========================================================
+   HOVER OVERLAY
+========================================================= */
+
+.team-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  padding: 20px;
+
+  background: rgba(0, 0, 0, 0.72);
+
+  opacity: 0;
+
+  transition: opacity 0.35s ease;
+
+  z-index: 2;
+}
+
+
+/* Show overlay */
+
+.team-card:hover .team-overlay {
+  opacity: 1;
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.team-btn {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 12px 18px;
+
+  border: 1px solid #ffffff;
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+
+.team-btn:hover {
+  background: #ffffff;
+  color: #111111;
+
+  transform: translateY(-2px);
+}
+
+
+/* Orange button */
+
+.team-btn-orange {
+  background: #ff6a00;
+  border-color: #ff6a00;
+  color: #ffffff;
+}
+
+
+.team-btn-orange:hover {
+  background: #ffffff;
+  border-color: #ffffff;
+  color: #111111;
+}
+
+
+/* =========================================================
+   TEAM INFORMATION
+========================================================= */
+
+.team-info {
+  padding-top: 18px;
+}
+
+
+.team-info h3 {
+  margin: 0 0 6px;
+
+  font-size: 24px;
+  line-height: 1.2;
+
+  font-weight: 500;
+
+  color: #111111;
+}
+
+
+.team-info p {
+  margin: 0;
+
+  font-size: 16px;
+  line-height: 1.4;
+
+  color: #666666;
+}
+
+
+/* =========================================================
+   INFINITE ANIMATION
+========================================================= */
+
+@keyframes teamScroll {
+
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(calc(-50% - 12px));
+  }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1024px) {
+
+  .team-section {
+    padding: 80px 0;
+  }
+
+  .team-heading {
+    margin-bottom: 40px;
+  }
+
+  .team-card {
+    flex-basis: 280px;
+
+    width: 280px;
+    min-width: 280px;
+  }
+
+  .team-image {
+    height: 350px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .team-section {
+    padding: 60px 0;
+  }
+
+  .team-heading {
+    margin-bottom: 35px;
+  }
+
+  .team-heading h2 {
+    font-size: 38px;
+  }
+
+  .team-heading p {
+    font-size: 17px;
+  }
+
+  .team-card {
+    flex-basis: 260px;
+
+    width: 260px;
+    min-width: 260px;
+  }
+
+  .team-image {
+    height: 330px;
+  }
+
+  .team-info h3 {
+    font-size: 21px;
+  }
+
+  .team-overlay {
+    flex-direction: column;
+  }
+
+  .team-btn {
+    width: 150px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .team-section {
+    padding: 50px 0;
+  }
+
+  .team-heading h2 {
+    font-size: 32px;
+  }
+
+  .team-card {
+    flex-basis: 230px;
+
+    width: 230px;
+    min-width: 230px;
+  }
+
+  .team-image {
+    height: 300px;
+  }
+
+}

@@ -1,0 +1,5 @@
+
+.c-b-hero__video {
+  transform: scaleX(-1);
+  object-fit: cover;
+}
